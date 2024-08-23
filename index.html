@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wonders of Kerala - Tourist Attractions</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        .navbar {
+            background-color: rgba(33, 37, 41, 0.8) !important; /* Added transparency to navbar */
+        }
+        .hero {
+            position: relative;
+            background-image: url('bg.jpg');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, 
+                rgba(18, 18, 18, 0) 0%,
+                rgba(18, 18, 18, 0.5) 75%,
+                rgba(18, 18, 18, 1) 100%);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .parallax-section {
+            background-image: url('kerala-landscape.jpg');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .attraction-card {
+            transition: transform 0.3s;
+            background-color: #1e1e1e;
+        }
+        .attraction-card:hover {
+            transform: scale(1.05);
+        }
+        .custom-toggler .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+        }
+        
+        /* Animation keyframes */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideInLeft {
+            from { transform: translateX(-100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes slideInRight {
+            from { transform: translateX(100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes slideInUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Apply animations */
+        .fade-in {
+            opacity: 0;
+            transition: opacity 1.5s ease-out;
+        }
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+        }
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(100px);
+            transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+        }
+        .slide-in-up {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        .animate {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Kerala Tourism</a>
+            <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#attractions">Attractions</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#culture">Culture</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#cuisine">Cuisine</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content fade-in">
+            <h1 class="display-3">Experience the Magic of Kerala</h1>
+            <p>Discover the enchanting beauty of God's Own Country</p>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <section id="about" class="mb-5 fade-in">
+            <h2 class="text-center mb-4">About Kerala</h2>
+            <p class="lead text-center">
+                Kerala, affectionately known as "God's Own Country," is a tropical paradise nestled on the southwestern coast of India. 
+                This enchanting state offers a diverse tapestry of experiences, from serene backwaters and pristine beaches to misty hill stations and vibrant wildlife sanctuaries.
+            </p>
+            <p class="text-center">
+                With its rich cultural heritage, ayurvedic traditions, and warm hospitality, Kerala promises an unforgettable journey for every traveler.
+            </p>
+        </section>
+    </main>
+
+    <div class="parallax-section">
+        <h2 class="display-4 text-center fade-in">Discover the Beauty of Kerala</h2>
+    </div>
+
+    <main class="container my-5">
+        <section id="attractions" class="mb-5">
+            <h2 class="text-center mb-4 fade-in">Top Tourist Attractions</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card attraction-card h-100 slide-in-up">
+                        <img src="back.png" class="card-img-top" alt="Alleppey Backwaters">
+                        <div class="card-body">
+                            <h5 class="card-title">Alleppey Backwaters</h5>
+                            <p class="card-text">Experience the tranquil beauty of Kerala's backwaters on a traditional houseboat. Glide through serene waterways, observe local life, and enjoy breathtaking sunsets.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card attraction-card h-100 slide-in-up">
+                        <img src="tea.webp" class="card-img-top" alt="Munnar Tea Plantations">
+                        <div class="card-body">
+                            <h5 class="card-title">Munnar Tea Plantations</h5>
+                            <p class="card-text">Explore the rolling hills covered in lush green tea plantations. Enjoy panoramic views, visit tea factories, and trek through picturesque landscapes.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card attraction-card h-100 slide-in-up">
+                        <img src="fort.jpg" class="card-img-top" alt="Fort Kochi">
+                        <div class="card-body">
+                            <h5 class="card-title">Fort Kochi</h5>
+                            <p class="card-text">Discover the rich history and colonial architecture of this charming coastal town. Explore Chinese fishing nets, spice markets, and vibrant street art.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="culture" class="mb-5">
+            <h2 class="text-center mb-4 fade-in">Rich Cultural Heritage</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6 slide-in-left">
+                    <img src="kathak.webp" class="img-fluid rounded" alt="Kathakali Performance">
+                </div>
+                <div class="col-md-6 slide-in-right">
+                    <h3>Kathakali and More</h3>
+                    <p>Kerala's cultural landscape is as diverse as its natural beauty. Experience the vibrant colors and intricate storytelling of Kathakali, a classical dance-drama. Witness the strength and agility of Kalaripayattu, one of the oldest martial art forms in the world.</p>
+                    <p>Immerse yourself in the rhythmic beats of Chenda melam during temple festivals, or enjoy the soothing strains of Carnatic music. Kerala's festivals, like Onam and Thrissur Pooram, offer a spectacular display of traditions and community spirit.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="cuisine" class="mb-5">
+            <h2 class="text-center mb-4 fade-in">Delectable Cuisine</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6 order-md-2 slide-in-right">
+                    <img src="food.webp" class="img-fluid rounded" alt="Kerala Cuisine">
+                </div>
+                <div class="col-md-6 order-md-1 slide-in-left">
+                    <h3>A Culinary Paradise</h3>
+                    <p>Kerala's cuisine is a tantalizing blend of flavors, aromas, and textures. Savor the delicate spices in a traditional Kerala fish curry, or indulge in the crispy goodness of appam with stew. Don't miss the opportunity to try:</p>
+                    <ul>
+                        <li>Malabar Biryani</li>
+                        <li>Sadya (a grand vegetarian feast)</li>
+                        <li>Puttu and Kadala Curry</li>
+                        <li>Kerala Prawn Curry</li>
+                        <li>Pazham Pori (banana fritters)</li>
+                    </ul>
+                    <p>Complete your culinary journey with a cup of aromatic filter coffee or refreshing coconut water straight from the shell.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rest of the sections remain unchanged -->
+
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 Kerala Tourism. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .slide-in-up').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
